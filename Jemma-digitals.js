@@ -11,20 +11,20 @@ const sideMenu = document.getElementById('sidemenu');
 const overlay = document.getElementById('overlay');
 const body = document.body;
 
-function openMenu() {
+function openmenu() {
     sideMenu.style.right = "0";
     overlay.style.display = "block";
     body.classList.add('no-scroll');
 }
 
-function closeMenu() {
+function closemenu() {
     sideMenu.style.right = "-300px";
     overlay.style.display = "none";
     body.classList.remove('no-scroll');
     body.style.filter = "none";
 }
 
-overlay.addEventListener('click', closeMenu);
+overlay.addEventListener('click', closemenu);
 
 
 
