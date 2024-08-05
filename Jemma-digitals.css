@@ -1030,7 +1030,7 @@ textarea {
     transition: 200ms ease-in-out;
     z-index: 10;
     background-color: white;
-    height: 100vh;
+    height: 80vh;
     overflow-y:scroll;
 
 }
