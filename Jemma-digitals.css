@@ -1009,6 +1009,7 @@ textarea {
     font-size: 16px;
     font-weight: 400;
     transition: 0.5s;
+    color: #450065;
 }
 
 .select button:hover {
