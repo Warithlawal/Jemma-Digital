@@ -106,7 +106,7 @@ function renderSchedule() {
     document.querySelector('.js-schedule').innerHTML = scheduleCallHTML;
 }
 
-function addDate() {
+function addDate(event) {
     const inputElement = document.querySelector('.js-date-input');
     const date = inputElement.value;
 
@@ -120,23 +120,40 @@ function addDate() {
         timeInputElement.value = '';
 
         renderSchedule();
+
+        const modal = document.querySelector('[data-modal-target="#modal"]').dataset.modalTarget;
+        openModal(document.querySelector(modal));
     } else {
         alert('Please select both date and time.');
+        event.preventDefault();
     }
 }
 
-
+const bookButton = document.querySelector('.js-book-button');
 const openModalButtons = document.querySelectorAll('[data-modal-target]');
 const closeModalButtons = document.querySelectorAll('[data-close-button]');
 const overlay2 = document.getElementById('overlay-2');
 
+bookButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    addDate();
+    body.classList.add('no-scroll');
+});
+
+/*
 openModalButtons.forEach(button => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (event) => {
         const modal = document.querySelector(button.dataset.modalTarget);
+        if (!scheduleCall.date || !scheduleCall.time) {
+            alert('Please select both date and time.');
+            event.preventDefault();
+            return;
+        }
         openModal(modal);
         body.classList.add('no-scroll');
     });
 });
+*/
 
 overlay2.addEventListener('click', () => {
     const modals = document.querySelectorAll('.modal.active');

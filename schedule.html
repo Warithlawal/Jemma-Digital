@@ -64,9 +64,7 @@
                     <h2>Select Time:</h2>
                     <p>10AM - 5PM</p>
                     <input type="time" class="js-time-input" required> 
-                    <button data-modal-target="#modal" onclick="
-                        addDate();
-                    ">Book</button> 
+                    <button class="js-book-button" data-modal-target="#modal">Book</button> 
                 </div>
 
             </div>
@@ -99,8 +97,8 @@
                     <label for="meeting">Please share anything that will help prepare for our meeting</label>
                     <textarea id="meeting" name="user_metting" rows="4" cols="60" required></textarea>
                     <div>
-                        <button type="submit" class="submit">Book Call</button>
-                        <button data-close-button type="submit" class="submit">Cancel</button>
+                         <button type="submit" class="submit">Book Call</button>
+                        <button data-close-button type="button" class="submit">Cancel</button>
                     </div>
                 </form>
             </div>
