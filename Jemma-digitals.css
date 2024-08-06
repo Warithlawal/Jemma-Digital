@@ -986,6 +986,8 @@ textarea {
 
 .select h2 {
     padding-bottom: 10px;
+    border-bottom: 0.5px solid #450065;
+    margin-bottom: 10px;
 }
 
 .select p {
@@ -1010,6 +1012,7 @@ textarea {
     font-weight: 400;
     transition: 0.5s;
     color: #450065;
+    border-radius: 5px;
 }
 
 .select button:hover {
@@ -1048,7 +1051,8 @@ textarea {
 }
 
 .modal-header h2 {
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: 300;
 
 }
 
@@ -1063,6 +1067,17 @@ textarea {
 
 .modal-body {
     padding: 10px 15px;
+}
+
+.modal-body h3{
+    margin-bottom: 15px;
+}
+
+.clock {
+    border-top: 0.5px solid #450065;
+    border-bottom: 0.5px solid #450065;
+    padding: 10px 0;
+    margin-bottom: 10px;
 }
 
 #overlay-2 {

@@ -92,26 +92,17 @@ const sendEmail = (e) => {
 contactForm.addEventListener('submit', sendEmail);*/
 
 
-const scheduleCall = [{
+// script.js
+let scheduleCall = {
     date: '',
     time: ''
-}];
+};
 
 renderSchedule();
 
 function renderSchedule() {
-
-    let scheduleCallHTML = '';
-
-    for (let i = 0; i < scheduleCall.length; i++) {
-        const scheduleObject = scheduleCall[i];
-        const { date, time} = scheduleObject
-        const html = `<p>
-        ${date} ${time}
-        </p>`;
-        scheduleCallHTML += html;
-    }
-
+    const { date, time } = scheduleCall;
+    const scheduleCallHTML = date && time ? `<p>${date} at ${time}</p>` : '<p>No schedule set.</p>';
     document.querySelector('.js-schedule').innerHTML = scheduleCallHTML;
 }
 
@@ -121,17 +112,19 @@ function addDate() {
 
     const timeInputElement = document.querySelector('.js-time-input');
     const time = timeInputElement.value;
-    
-    scheduleCall.push({
-        date,
-        time
-    });
 
-    inputElement.value = '';
-    timeInputElement.value = '';
+    if (date && time) {
+        scheduleCall = { date, time };
 
-    renderSchedule();
+        inputElement.value = '';
+        timeInputElement.value = '';
+
+        renderSchedule();
+    } else {
+        alert('Please select both date and time.');
+    }
 }
+
 
 const openModalButtons = document.querySelectorAll('[data-modal-target]');
 const closeModalButtons = document.querySelectorAll('[data-close-button]');
