@@ -823,7 +823,7 @@ tr:nth-child(even) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 15px;
 }
 .faq-question h3 {
     font-weight: 500;
@@ -857,7 +857,7 @@ tr:nth-child(even) {
 }
 
 .faq.active .faq-answer {
-    max-height: 300px;
+    max-height: 800px;
     animation: fade 0.5s ease-in-out;
 }
 
