@@ -1035,6 +1035,7 @@ textarea {
     background-color: white;
     height: 80vh;
     overflow-y:scroll;
+    color: #450065;
 
 }
 
@@ -1067,6 +1068,10 @@ textarea {
 
 .modal-body {
     padding: 10px 15px;
+}
+
+.modal-body form label {
+    color: #450065;
 }
 
 .modal-body h3{
