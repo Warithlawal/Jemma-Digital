@@ -167,6 +167,7 @@ closeModalButtons.forEach(button => {
     button.addEventListener('click', () => {
         const modal = button.closest('.modal');
         closeModal(modal);
+        body.classList.remove('no-scroll');
     });
 });
 
