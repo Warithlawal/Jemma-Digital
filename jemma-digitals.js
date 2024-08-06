@@ -114,6 +114,24 @@ function addDate(event) {
     const time = timeInputElement.value;
 
     if (date && time) {
+        const selectedDate = new Date(date);
+        const day = selectedDate.getDay();
+        const selectedTime = time.split(':');
+        const hours = parseInt(selectedTime[0]);
+        const minutes = parseInt(selectedTime[1]);
+
+        if (day === 0 || day === 6) {
+            alert('Please select a weekday (Monday to Friday).');
+            event.preventDefault();
+            return;
+        }
+
+        if (hours < 10 || (hours === 17 && minutes > 0) || hours > 17) {
+            alert('Please select a time between 10:00 AM and 5:00 PM.');
+            event.preventDefault();
+            return;
+        }
+
         scheduleCall = { date, time };
 
         inputElement.value = '';
@@ -136,23 +154,8 @@ const overlay2 = document.getElementById('overlay-2');
 
 bookButton.addEventListener('click', (event) => {
     event.preventDefault();
-    addDate();
+    addDate(event);
 });
-
-/*
-openModalButtons.forEach(button => {
-    button.addEventListener('click', (event) => {
-        const modal = document.querySelector(button.dataset.modalTarget);
-        if (!scheduleCall.date || !scheduleCall.time) {
-            alert('Please select both date and time.');
-            event.preventDefault();
-            return;
-        }
-        openModal(modal);
-        body.classList.add('no-scroll');
-    });
-});
-*/
 
 overlay2.addEventListener('click', () => {
     const modals = document.querySelectorAll('.modal.active');
@@ -160,7 +163,6 @@ overlay2.addEventListener('click', () => {
         closeModal(modal);
     });
 });
-
 
 closeModalButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -182,6 +184,3 @@ function closeModal(modal) {
     overlay2.classList.remove('active');
     document.body.classList.remove('no-scroll');
 }
-
-
-
