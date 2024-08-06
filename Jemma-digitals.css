@@ -519,7 +519,7 @@ tr:nth-child(even) {
 }
 
 .accordion.active .answer {
-    max-height: 300px;
+    max-height: 500px;
     animation: fade 0.5s ease-in-out;
 }
 
