@@ -180,7 +180,7 @@ function closeModal(modal) {
     if (modal == null) return;
     modal.classList.remove('active');
     overlay2.classList.remove('active');
-    documentbody.classList.remove('no-scroll');
+    document.body.classList.remove('no-scroll');
 }
 
 
