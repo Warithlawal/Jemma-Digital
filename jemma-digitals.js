@@ -137,7 +137,6 @@ const overlay2 = document.getElementById('overlay-2');
 bookButton.addEventListener('click', (event) => {
     event.preventDefault();
     addDate();
-    body.classList.add('no-scroll');
 });
 
 /*
@@ -167,7 +166,6 @@ closeModalButtons.forEach(button => {
     button.addEventListener('click', () => {
         const modal = button.closest('.modal');
         closeModal(modal);
-        body.classList.remove('no-scroll');
     });
 });
 
@@ -175,12 +173,14 @@ function openModal(modal) {
     if (modal == null) return;
     modal.classList.add('active');
     overlay2.classList.add('active');
+    document.body.classList.add('no-scroll');
 }
 
 function closeModal(modal) {
     if (modal == null) return;
     modal.classList.remove('active');
     overlay2.classList.remove('active');
+    documentbody.classList.remove('no-scroll');
 }
 
 
